@@ -1,9 +1,8 @@
 <li class='list-group-item'>
     {{ item.name }}
-    <form method='POST' action='/products/{{item.id}}?_method=PUT'>
-        <button type = 'submit' style='margin-right: 10px' class='btn btn-default pull-right'>Edit</button>
-    </form>
-    <form method='POST' action='/products/{{item.id}}?_method=DELETE'>
+    <button type = 'submit' style='margin-bottom: 10px' class = 'btn btn-default pull-right' onclick ="location.href = '/edit/{{ item.id }}';">Edit</button>
+    <form method='POST' action='/products/{{item.id}}?_method=DELETE' style = 'display: inline'>
         <button type = 'submit' style='margin-right: 10px' class='btn btn-danger pull-right'>Delete</button>
     </form>
+    <br clear = "both">
 </li>

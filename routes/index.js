@@ -14,8 +14,11 @@ router.get('/add', function(req, res, next){
     res.render('add',{ title: 'Add' });
 });
 
-router.get('/edit', function(req, res, next){
-    res.render('edit',{ title: 'Edit' });
+// router.get('/edit', function(req, res, next){
+//     res.render('edit',{ title: 'Edit' });
+// });
+router.get('/edit/:id', function(req, res, next){
+    res.render('edit',{ title: 'Edit' , id: req.params.id});
 });
 
 router.delete('/products/:id', function(req, res, next){
@@ -23,8 +26,8 @@ router.delete('/products/:id', function(req, res, next){
     res.redirect('/products');
 });
 
-router.put('/products/:id', function(req, res, next){
-    Products.editProduct(req.params.id*1, 'myEdit');
+router.post('/edit/:id', function(req, res, next){
+    Products.editProduct(req.params.id*1, req.body.text);
     res.redirect('/products');
 });
 

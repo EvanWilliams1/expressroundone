@@ -1,6 +1,6 @@
 {% extends './layout.html' %}
 {% block main %}
-<button type = 'submit' style='margin-bottom: 10px' class='btn btn-primary' a href='/add'>Add a Product</button>
+<button type = 'submit' style='margin-bottom: 10px' class = 'btn btn-primary' onclick ="location.href = '/add';">Add a Product</button>
     {% if products.length===0 %}
     <div class='well'>
         There are no available products

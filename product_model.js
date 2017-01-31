@@ -25,15 +25,11 @@ module.exports = {
         this.getProducts().splice(index, 1);
     },
     editProduct: function(id, newName){
-        var toEdit = this.getProducts().filter(function(item){
-            return item.id===id;
-        })[0];
-        var index = this.getProducts().indexOf(toEdit)
-        this.getProducts()[index].name=newName;
+        this.getProducts()[id-1].name=newName;
     },
     add: function(myName){
-        var myId = this.getProducts().length;
-        this.getProducts.push({id: myId, name: myName})
+        var myId = this.getProducts().length+1;
+        this.getProducts().push({id: myId, name: myName})
     }
 
 };

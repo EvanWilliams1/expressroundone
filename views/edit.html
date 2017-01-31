@@ -1,10 +1,8 @@
 {% extends './layout.html' %}
 {% block main %}
-  <form action="/tweets" method="POST">
-
+  <form method = 'POST' action='/edit/{{ id }}'>
     <label for="text_field">Name:</label>
     <input name="text" type="text" id="text_field" style="width: 350px;" />
-
     <input type="submit" value="Update" />
   </form>
 {% endblock %}
